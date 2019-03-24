@@ -1,0 +1,203 @@
+SRHW70 PHFO 212330
+RR5HFO
+HAWAII ONE-HOUR RAINFALL SUMMARY
+NATIONAL WEATHER SERVICE HONOLULU HI
+130 PM HST Thu Mar 21 2019
+
+:
+.B HFO 0321 H  DH13 /DRH-01/PPH
+:
+:Automated rain gage reports from around the State of Hawaii.
+:These are provisional reports that have not been quality
+:controlled.
+:
+:T=Trace Rainfall, M=Missing Data
+:
+:One-hour precipitation totals ending at  1 PM HST
+:
+:Island of Kauai                        Inches
+:ID     Location                         1-Hr
+:       Windward/Mauka Sites
+MKAH1 : Makaha Ridge                :       M
+PLRH1 : Puu Lua                     :       M
+KOKH1 : Kokee (HI46)                :    0.00
+WKRH1 : Waiakoali (USGS)            :    0.00
+KLOH1 : Kilohana (USGS)             :    0.00
+MCRH1 : Mohihi Crossing (USGS)      :    0.00
+WLGH1 : Waialae (USGS)              :    0.00
+WNHH1 : Wainiha (HI41)              :    0.00
+HNIH1 : Hanalei (HI45)              :    0.00
+WLLH1 : Mount Waialeale (USGS)      :    0.00
+PRIH1 : Princeville Airport         :       M
+MLDH1 : Moloaa Dairy                :       M
+ANHH1 : Anahola (12001)             :       M
+KPIH1 : Kapahi (12003)              :       M
+WLDH1 : N Wailua Ditch (USGS)       :    0.00
+WUHH1 : Wailua (12005)              :       M
+LIHH1 : Lihue Var. Stn. (12006)     :       M
+HLI   : Lihue Airport               :    0.00
+:       Leeward Sites
+POIH1 : Poipu                       :       M
+OMAH1 : Omao (12004)                :    0.00
+KHEH1 : Kalaheo (HI43)              :    0.00
+PAKH1 : Port Allen                  :       M
+HNPH1 : Hanapepe (12002)            :       M
+POPH1 : Puu Opae                    :    0.00
+WHGH1 : Waimea Heights              :    0.00
+MNRH1 : Mana                        :    0.00
+:
+:Island of Oahu                         Inches
+:ID     Location                         1-Hr
+:       Windward/Mauka Sites
+KAHH1 : Kahuku                      :       M
+KTAH1 : Kahuku Training Area        :       M
+KFWH1 : Kii                         :    0.00
+PUNH1 : Punaluu Pump (13013)        :    0.00
+PNSH1 : Punaluu Stream (USGS)       :       M
+KNRH1 : Kahana (USGS)               :       M
+HAKH1 : Hakipuu Mauka (13004)       :    0.00
+WPPH1 : Waihee Pump (13002)         :    0.00
+WHSH1 : Waiahole (USGS)             :    0.00
+OFRH1 : Oahu Forest NWR (USFWS)     :    0.00
+AHUH1 : Ahuimanu Loop (13005)       :       M
+HNG   : Kaneohe MCBH                :       M
+LULH1 : Luluku (HI15)               :    0.00
+NUUH1 : Nuuanu Upper (13007)        :       M
+MNLH1 : Manoa Lyon Arboretum (3050) :    0.00
+STVH1 : St. Stephens (13006)        :    0.00
+MAUH1 : Maunawili (13008)           :    0.00
+OFSH1 : Olomana Fire Station (13009):    0.00
+WMLH1 : Waimanalo (13011)           :    0.00
+BELH1 : Bellows AFS                 :       M
+KMHH1 : Kamehame (13012)            :    0.00
+HAJH1 : Hawaii Kai Golf Crse (HI21) :    0.00
+:       Leeward/Central Sites
+NIUH1 : Niu Valley (13001)          :    0.00
+PFSH1 : Palolo Fire Station (13010) :    0.00
+ALOH1 : Aloha Tower (HI26)          :    0.00
+HNL   : Honolulu Airport            :    0.00
+MOAH1 : Moanalua (13003)            :    0.00
+MOGH1 : Moanalua RG (USGS)          :    0.00
+TNLH1 : Tunnel RG (USGS)            :       M
+PACH1 : Palisades (3020)            :    0.00
+WAWH1 : Waiawa C.F. (3070)          :    0.00
+MITH1 : Mililani (3040)             :    0.00
+SCBH1 : Schofield Barracks          :       M
+WAFH1 : Wheeler Airfield            :    0.00
+POAH1 : Poamoho (3000)              :    0.00
+KWLH1 : Kawailoa                    :    0.00
+KMRH1 : Kamananui Stream (USGS)     :       M
+PPRH1 : Pupukea Road (USGS)         :       M
+PMHH1 : Poamoho RG 1 (USGS)         :    0.00
+DLGH1 : Dillingham                  :    0.00
+PECH1 : Waipio (3010)               :    0.00
+KUNH1 : Kunia Substation (3030)     :    0.00
+WWFH1 : Waiawa                      :    0.00
+HOFH1 : Honouliuli                  :    0.00
+PTWH1 : Pac Tsunami Wng Ctr (3060)  :    0.00
+HJR   : Kalaeloa Airport            :    0.00
+PLHH1 : Palehua                     :    0.00
+LUAH1 : Lualualei (HI05)            :    0.00
+WNVH1 : Waianae Valley              :    0.00
+WBHH1 : Waianae Boat Harbor         :       M
+WAIH1 : Waianae (HI17)              :       M
+MKHH1 : Makaha Stream (USGS)        :    0.00
+MKRH1 : Makua Range                 :       M
+MAPH1 : Makua Portable              :       M
+KKRH1 : Kuaokala                    :    0.00
+:
+:Island of Molokai                      Inches
+:ID     Location                         1-Hr
+KMLH1 : Kamalo (HI73)               :    0.00
+MKPH1 : Makapulapai                 :    0.00
+PAFH1 : Puu Alii                    :    0.00
+MLKH1 : Molokai 1                   :    0.00
+KACH1 : Kaunakakai Mauka (14004)    :    0.00
+HMK   : Molokai Airport             :    0.00
+:
+:Island of Lanai                        Inches
+:ID     Location                         1-Hr
+LANH1 : Lanai City (HI72)           :    0.00
+LNIH1 : Lanai 1                     :    0.00
+:
+:Island of Kahoolawe                    Inches
+:ID     Location                         1-Hr
+HKAH1 : Honokanaia                  :       M
+:
+:Island of Maui                         Inches
+:ID     Location                         1-Hr
+:       Windward Sites
+HNAH1 : Hana Airport                :       M
+WWKH1 : West Wailuaiki (USGS)       :    0.00
+AIKH1 : Haiku (14001)               :    0.00
+HOG   : Kahului Airport             :    0.00
+WUKH1 : Wailuku (14007)             :    0.00
+KHKH1 : Kahakuloa (14002)           :    0.00
+PKKH1 : Puu Kukui (USGS)            :    0.00
+:       Leeward/Upcountry Sites
+KPGH1 : Kaupo Gap                   :       M
+KPNH1 : Kepuni (USGS)               :    0.00
+PUKH1 : Pukalani (14006)            :    0.00
+KBSH1 : Kula Branch Station (14008) :    0.00
+KLFH1 : Kula 1                      :    0.00
+ULUH1 : Ulupalakua (14003)          :    0.00
+KHIH1 : Kihei #2 (14009)            :       M
+KPDH1 : Kealia Pond (USFWS)         :       M
+WCCH1 : Waikapu Country Club (14005):    0.00
+P36   : Maalaea Bay                 :    0.00
+LAHH1 : Lahainaluna (HI60)          :    0.00
+MABH1 : Mahinahina (14010)          :    0.00
+:
+:Island of Hawaii                       Inches
+:ID     Location                         1-Hr
+:       Windward Sites
+UPLH1 : Upolu Airport               :       M
+KWSH1 : Kawainui Stream (USGS)      :    0.03
+KUUH1 : Kamuela Upper (15002)       :    0.00
+KMUH1 : Kamuela (15005)             :    0.01
+HNKH1 : Honokaa                     :       M
+PMLH1 : Puu Mali                    :       M
+LPHH1 : Laupahoehoe (HI80)          :       M
+HKUH1 : Hakalau                     :    0.00
+PPWH1 : Papaikou Well (5070)        :    0.00
+SDQH1 : Saddle Quarry (USGS)        :    0.00
+PIIH1 : Piihonua (5020)             :    0.00
+WKAH1 : Waiakea Uka (5030)          :    0.00
+WEXH1 : Waiakea Experiment Stn      :       M
+HTO   : Hilo Airport                :    0.00
+PHAH1 : Pahoa (5010)                :    0.00
+MTVH1 : Mountain View (5000)        :    0.00
+GLNH1 : Glenwood (5040)             :    0.00
+KNWH1 : Kulani NWR (5050)           :    0.00
+:       Leeward Sites
+MOBH1 : Mauna Loa Obs Stn           :    0.00
+KKUH1 : Keaumo                      :    0.00
+KMOH1 : Kealakomo                   :    0.00
+PLIH1 : Pali 2                      :    0.00
+KPRH1 : Kapapala RAWS               :    0.00
+KAYH1 : Kapapala Ranch (15003)      :    0.00
+PPLH1 : Pahala (15004)              :    0.00
+NENH1 : Nene Cabin                  :    0.00
+SOPH1 : South Point                 :       M
+LKHH1 : Lower Kahuku                :    0.00
+KRCH1 : Kahuku Ranch                :    0.00
+PHRH1 : Puho CS                     :    0.00
+HAUH1 : Honaunau (15007)            :    0.00
+KLEH1 : Kealakekua (15007)          :    0.00
+WIHH1 : Waiaha (15009)              :    0.00
+KHOH1 : Kaloko-Honokohau            :    0.00
+HKO   : Kona International Airport  :    0.00
+KIRH1 : Kiholo RG (USGS)            :    0.00
+KPLH1 : Kaupulehu                   :    0.00
+PULH1 : Puuanahulu                  :    0.00
+PWWH1 : Puu Waawaa                  :    0.00
+PKAH1 : Pohakuloa Kipuka Alala      :    0.00
+PKWH1 : Pohakuloa West              :    0.00
+PKMH1 : Pohakuloa Keamuku           :    0.00
+AHMH1 : Ahumoa                      :    0.00
+WHIH1 : Waikii (HI90)               :    0.00
+WKVH1 : Waikoloa                    :    0.00
+PERH1 : Puhe CS                     :    0.00
+KHRH1 : Kohala Ranch                :    0.00
+KASH1 : Kahua Ranch (HI96)          :    0.00
+.END
