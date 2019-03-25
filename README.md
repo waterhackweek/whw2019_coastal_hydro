@@ -3,9 +3,9 @@
 Meteorological forcing data for NWM/WRF-Hydro 
 
 ## Collaborators on this project 
-Project lead: Yin-Phan Tsang
-Data Science lead: Yu-Fen Huang 
-Others: Tony Castronova
+Project lead: Yin-Phan Tsang  
+Data Science lead: Yu-Fen Huang  
+Others: Tony Castronova, AnyiChen  
 
 
 
