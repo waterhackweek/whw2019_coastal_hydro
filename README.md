@@ -34,11 +34,22 @@ The WRF-Hydro forcing has to include:
 * Liquid water precipitation rate (mm/s)
 
 ## Specific Questions
-Can we build WRF-Hydro meteorological forcing file with multiple data sources, including ground-based observations, remote sensing QPE, global re-analysis data?
+Can we build WRF-Hydro meteorological forcing file with multiple data sources, including ground-based observations, remote sensing QPE, global re-analysis data? Or add additional observation in the exist meteorological input?
 
 ## Existing methods
-There is no an existing method. Previously, we had used WRF output from a research group in Department of Atmospheric Science at University of Hawaii at Manoa. The WRF output is readily compatible with WRF-Hydro. 
+There is no an existing method. Previously, we had used Weather Research and Forecasting (WRF) output from a research group in Department of Atmospheric Science at University of Hawaii at Manoa. The WRF output is readily compatible with WRF-Hydro. 
 
 ## Proposed methods/tools
-Potential package: xarray
+#### Workflow/methods:
+1. Understand the output format (i.e. the format of meteorological input for WRF-Hydro): investigate the structure of expected output.
+2. Subset the new data with our interested domain or check if the new data is in the interested region.
+3. Blending data for each variable:
+    * point data and gridded data: re-mesh potentially by simply re-grid and add spatial autocorelation, etc.
+    * gridded data and gridded data: re-mesh
+4. Re-structure each variables and melt variables into one file.
 
+#### What help we need/what we don't know:
+* We know what the final product looks like, and we have blur idea and workflow for reaching it. Yet we don't really know if the re-mesh or re-grid is reasonable and what tools out there that we can use.
+
+## Other information about WRF-Hydro/NWM
+* [CUAHSI Domain subsetter for NWM v1.2.2 (CONUS)](http://subset.cuahsi.org/) - *Tony Castronova*
