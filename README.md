@@ -22,6 +22,7 @@ Meteorological data for Hawaii
 HADS or NWS_HFO | ground observations for mostly rainfall, A few stations have other meteorological variables | Spatial: NA; Temporal: 15-min to hourly | .txt or .csv |
 GPM | The Global Precipitation Measurement | Spatial: 0.1 degree; Temporal: hourly | NetCDF4 |
 GLDAS | Global Land Data Assimilation System | Spatial: 0.25 degree; Temporal: 3-hr | NetCDF4 |
+Hydro Estimator | Satellite Quantitative Precipitation Estimation | Spatial: 4 km; Temporal: hourly | ASCII |
 MRMS | multi-radar multi sensor data, already operated in CONUS | Spatial: 1-km; Temporal: hourly | GRIB2 |
 geo_em.dxx | the domain for WRF-Hydro, the file to specific the forcing area | Spatial: depends; Temporal: NA | NetCDF |
 nwm.tXXz.analysis_assim.channel_rt.tmXX.xxx.nc | the exist meteorological forcing for WRF-Hydro for reference | Spatial: depends; Temporal: hourly | NetCDF |
