@@ -1,37 +1,34 @@
 ;----------------------------------------------------------------------
-; Name    : NLDAS2WRFHydro_regrid.ncl
+; Name    : GLDAS2WRFHydro_regrid.ncl
 ;
 ; Purpose : This is an NCL script that uses ESMF utilities to perform regridding of various 
 ;           data fields to a WRF-Hydro domain.
 ;
 ;           Note that before running this script you will need to run the 
-;           NLDAS2WRFHydro_generate_weights.ncl script to generate the required weight
+;           GLDAS2WRFHydro_generate_weights.ncl script to generate the required weight
 ;           file(s) for your chosen regridding option(s). 
 ;
 ;           Important notes:
 ;           1) This script assumes that the source files are provided at an hourly interval.
-;              This is true for the current generation of NLDAS forcing data and is an assumption made
+;              This is true for the current generation of GLDAS forcing data and is an assumption made
 ;              to compute the rainrate variable in output files.          
 ;           2) This script is currently configured to use the bilinear interpolation option for all forcing 
 ;              fields.  Should the user desire to use a different interpolation option, the name for the
 ;              corresponding weight file should be added to user settings and the weight files for each 
 ;              variable adjusted appropriately.
-;           3) NLDAS source files do not contain a "time" data field. This program will
-;              parse time info from the filename and add it to the final netCDF file.
-;           4) NLDAS A_PCP is hourly precipitation amount. No need for zero'ing it out
-;              at the begining of the time period.
-;           5) By default the domain number for the output filename is set to 1.  This can be changed in the 
+;           3) By default the domain number for the output filename is set to 1.  This can be changed in the 
 ;              user settings section of this script.
 ;
 ;
-; Example Usage   : ncl 'srcFileName="NLDAS_FORA0125_H.*"' 'dstGridName="geo_em.d01.nc"' NLDAS2WRFHydro_regrid.ncl
+; Example Usage   : ncl 'srcFileName="GLDAS*nc4"' 'dstGridName="geo_em.d01.nc"' GLDAS2WRFHydro_regrid.ncl
 ;
-;           srcFileName = filename pattern of the souce NLDAS files.
-;                         e.g., "NLDAS_FORA0125_H.2013091300.grb", "NLDAS_FORA0125_H.2013091[2-5]00.grb" , ...
+;           srcFileName = filename pattern of the souce GLDAS files.
+;
 ;           dstGridName = name of file that contains the destination (WRF-Hydro) grid
 ; 
 ; Kyoko Ikeda 23 December 2013
 ; Updated: Mar 15, 2018   K. FitzGerald
+; Updated: Mar 28, 2019   K. FitzGerald
 ;
 ;----------------------------------------------------------------------
 load "$NCARG_ROOT/lib/ncarg/nclscripts/csm/gsn_code.ncl"
@@ -59,52 +56,21 @@ begin
   outdir  = "./output_files/"      ; directory where regridded forcing data will be placed. set to dirm for overwriting the original file
 
   ;---------------------------------------------------------------;
-  ; Set a variable to indicate the timestep of source data        ;
-  ;---------------------------------------------------------------;
-;  dt=3600.0   ; time over which precipitation is accumulated in the source dataset in units of seconds (currently set for NLDAS2 forcing)
-  dt=10800.0 	; GLDAS 3-hourly data
-
-  ;---------------------------------------------------------------;
   ; Weight filenames for regridding                               ;
   ;---------------------------------------------------------------;
-  ;wgtFileName_conserve = "./NLDAS2WRFHydro_weight_conserve.nc"
+  ;wgtFileName_conserve = "./GLDAS2WRFHydro_weight_conserve.nc"
   wgtFileName_bilinear = "./GLDAS2WRFHydro_weight_bilinear.nc"
 
   ;---------------------------------------------------------------;
   ; Data field names from the source file to be regridded         ;
   ;---------------------------------------------------------------;
-;   P_varname = "PRES_110_SFC"
-;   T_varname = "TMP_110_HTGL"
-;   U_varname = "U_GRD_110_HTGL"
-;   V_varname = "V_GRD_110_HTGL"
-;   Q_varname = "SPF_H_110_HTGL"
-;   PCP_varname  = "A_PCP_110_SFC_acc1h"
-;   DSWR_varname = "DSWRF_110_SFC"
-;   DLWR_varname = "DLWRF_110_SFC"
-
-
-   ; Pressure
    P_varname = "Psurf_f_inst"
-
-   ; temperature
    T_varname = "Tair_f_inst"
-
-   ; u-component of wind
    U_varname = "Wind_f_inst"
-
-   ; v-component of wind
-   V_varname = "Wind_f_inst"
-
-   ; Specific humidity
+   ;V_varname = <full wind speed in U component>
    Q_varname = "Qair_f_inst"
-
-   ; Total precipitation
-   PCP_varname  = "Rainf_tavg"
-
-   ; Downward shortwave radiation flux
+   PCP_varname  = "Rainf_f_tavg"
    DSWR_varname = "SWdown_f_tavg"
-
-   ; Downward longwave radiation flux
    DLWR_varname = "LWdown_f_tavg"
 
 ;----------------------------------------------------------------------
@@ -122,7 +88,7 @@ begin
   dlat2d=dstfile->XLAT_M(0,:,:)
   dims=dimsizes(dlat2d)
 
-  flag=0    ; flag for removing accum precip... (should be set to 0 for NLDAS2 forcing data)
+  flag=0    ; flag for removing accum precip... (should be set to 0 for GLDAS v2.1 forcing data)
 
 ;----------------------------------------------------------------------
 ; Open source data files to be regridded...
@@ -139,7 +105,7 @@ begin
       print( " ... Open input file : "+ datfils(ifil) )
    
      ;----------------------------------------------------------------------
-     ; Parse time from filename : NLDAS_FORA0125_H.AYYYYMMDD.HH*
+     ; Parse time from filename : GLDAS_NOAH025_3H.AYYYYMMDD.HH*
      ;----------------------------------------------------------------------
       strs = str_split( datfils(ifil), "." )
       sub_str = strs(1) + strs(2)
@@ -189,7 +155,8 @@ begin
            wgtFileName = wgtFileName_bilinear
         end if
         if (v.eq.4) then
-           var = datfile->$V_varname$
+           var = new(dimsizes(datfile->$U_varname$),float)
+           var(:,:,:) = 0
            wgtFileName = wgtFileName_bilinear
         end if
         if (v.eq.5) then
@@ -199,8 +166,6 @@ begin
         if (v.eq.6) then
            var = datfile->$PCP_varname$
            wgtFileName = wgtFileName_bilinear 
-; commenting out b/c rain is already in mm/s
-;           var = var / dt ; convert from mm to mm/s
            var@long_name = "RAINRATE"
            var@description = "RAINRATE"
            var@units       = "mm s^-1"
@@ -219,7 +184,7 @@ begin
        ;----------------------------------------------------------------------
        ; Define new array and perform regriddding
        ;----------------------------------------------------------------------
-        ntimes = 1  ; for NLDAS, there is only one time step in each file
+        ntimes = 1  ; for GLDAS, there is only one time step in each file
         v4 = new((/ntimes(0), dims(0), dims(1)/),"double")
        
        printVarSummary(v4)
@@ -237,7 +202,7 @@ begin
        ;-----------------------------------------------------;
         exist = isfilepresent( wgtFileName )
         if ( .not.exist ) then
-           print( " ... no weight file. Run NLDAS2WRFHydro_generate_weights.ncl first to generate: "+" "+wgtFileName )
+           print( " ... no weight file. Run GLDAS2WRFHydro_generate_weights.ncl first to generate: "+" "+wgtFileName )
            exit
         end if
      
