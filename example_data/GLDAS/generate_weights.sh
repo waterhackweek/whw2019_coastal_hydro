@@ -12,4 +12,4 @@ echo "-------------------------------"
 ncl 'interp_opt="bilinear"' \
 'srcGridName="'$FILE'"' \
 'dstGridName="'$DOMAIN'"' \
-GLDAS_WRFHydro_generate_weights.ncl
+GLDAS2WRFHydro_generate_weights.ncl
