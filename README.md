@@ -2,6 +2,9 @@
 ## Project Title 
 Meteorological forcing data for NWM/WRF-Hydro 
 
+## Google Doc
+https://docs.google.com/document/d/1U9nkF0-n_Ht-qLZVu9zKtrYcnrf5f1aD6lqx3uS2jtI/edit?usp=sharing
+
 ## Collaborators on this project 
 Project lead: Yin-Phan Tsang  
 Data Science lead: Yu-Fen Huang  
