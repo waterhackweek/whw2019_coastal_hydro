@@ -3,7 +3,9 @@
 Meteorological forcing data for NWM/WRF-Hydro 
 
 ## Google Doc
-https://docs.google.com/document/d/1U9nkF0-n_Ht-qLZVu9zKtrYcnrf5f1aD6lqx3uS2jtI/edit?usp=sharing
+[Link to Open Water draft paper](https://docs.google.com/document/d/1U9nkF0-n_Ht-qLZVu9zKtrYcnrf5f1aD6lqx3uS2jtI/edit?usp=sharing)
+
+[Link to Figure Slides](https://docs.google.com/presentation/d/1QzqulsWKCXmITVXmtKKTu46j82e3p9PoCdk5AwHC0wk/edit#slide=id.p)
 
 ## Collaborators on this project 
 Project lead: Yin-Phan Tsang  
