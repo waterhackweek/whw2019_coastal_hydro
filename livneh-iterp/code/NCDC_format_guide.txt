@@ -1,0 +1,1119 @@
+                           May 25, 2005
+
+                          DAILY SURFACE DATA
+                           (PRIMARILY U.S.)
+
+                     National Climatic Data Center
+                           151 Patton Ave.
+                       Asheville, North Carolina
+ 
+
+Field numbers are shown with column positions in parenthesis.
+
+FIELD 1 (1-4): DATA ORIGIN
+
+The original NCDC tapedeck of the dataset.  Referred to in some of the tables
+below.
+*** Important Note:  If tapedeck number is 3201 or 3202, this indicates the data
+are preliminary, with less quality control applied than the final data
+(indicated by 3200 or 3210).  The 3201/02 data are replaced online by the final
+data as soon as final data are available. ***
+
+
+FIELD 2 (6-11): COOPERATIVE STATION NUMBER
+
+This 6-character alphanumeric station identifier is assigned by the
+National Climatic Data Center.  The first two digits refer to a state
+code (value range is 01-91; reference Table "A").  The next four
+digits refer to the Cooperative Network Index number (value range
+is 0001-9999).  Missing/not assigned = 999999.
+
+
+FIELD 3 (13-17): WBAN STATION NUMBER
+
+This 5-character alphanumeric station identifier is assigned by the
+National Climatic Data Center.  It originally referred to Weather Bureau,
+Army, and Navy (WBAN) stations which mailed weather observational forms to
+NCDC.  These stations normally have more detailed data available than strictly
+cooperative stations, so stations with WBAN numbers will usually have
+additional data elements.
+
+
+Optional Field (19 - 48):  STATION NAME
+
+This 30-character alphanumberic field is displayed if the data selection is
+for data with Station Name.  Spacing for all fields following are adjusted
+31 characters (e.g., Division Number = 50-51).
+
+
+FIELD 4 (19-20): DIVISION NUMBER
+
+These two digits refer to the Cooperative Network Division Number (value range
+is 01-10; 99 = missing Division Number; reference Table "B").
+
+
+FIELD 5 (22-25): METEOROLOGICAL ELEMENT-TYPE
+
+The type of meteorological elements stored in this data record.  Range of
+values are listed below.  Note:  'b' in DATA-VALUE indicates ascii blank.
+
+    ASMM
+    Average Cloudiness Midnight to Midnight (begin September 1992 for
+    ASOS sites).  This is the average of all available 30-second
+    ceilometer data for the 24-hour period expressed in tenths of
+    cloud cover at or below 12,000 feet.  The DATA-VALUES are defined
+    in Reference Table "C".
+ 
+    ASSS
+    Average Cloudiness Sunrise to Sunset (begin September 1992 for
+    ASOS sites).  This is the average of all available 30-second
+    ceilometer data for the period from sunrise to sunset expressed
+    in tenths of cloud cover at or below  12,000 feet.  The DATA-VALUES
+    are defined in Reference Table "C".
+ 
+    AWND
+    Average Daily Wind Speed (begin 1984).  Units expressed in miles
+    per hour to tenths.  From January 1984 through June 1987 the
+    Element Unit is incorrectly listed as TK (Tenths of Knots), it
+    should be MH (Miles per Hour).
+ 
+    CLDG
+    Cooling Degree Day (begin 1984).  Base 65 degrees Fahrenheit.
+     
+    DPNT
+    Departure from Normal Temperature. DATA-VALUE = -00099 to b00099
+    degrees Fahrenheit.
+     
+    DPTP
+    Average Daily Dew-Point Temperature (begin 1984).  Units
+    expressed in tenths of degrees Fahrenheit.
+ 
+    DYSW
+    The different types of weather occurring that day (reference Table
+    "D" if FIELD 1 = 3200, Table "E" if FIELD 1 = 3210).
+
+    DYVC
+    Days with Weather in the Vicinity (begin July 1996). The present
+    (or prevailing) weather occurring at the time of the observation
+    in the vicinity of the station, between 5 and 10 statute miles of
+    the point of observation.
+        NOTE: This element is used beginning July 1996 and is coded in
+        the same manner as the element DYSW.  See the description for
+        DYSW for details. (Reference Table "E")
+
+    EVAP
+    Daily evaporation (not reported when temperature below freezing).
+    Unit Measurement, Inches & Hundredths of Inches.
+ 
+    F2MN
+    Fastest 2-minute Wind Direction and Speed (begin September 1992
+    for ASOS sites).  Direction is expressed in tens of degree from
+    true north.  Speed is expressed in miles per hour.  When two or
+    more equal speeds have occurred, the most recent speed and
+    direction are entered.
+    Example of DATA-VALUE field XXYYY for wind direction and speed:
+    22048.  Wind is from 220 degrees at 48 miles per hour.
+ 
+    F5SC
+    Fastest 5-second Wind Direction and Speed (begin September 1992
+    for ASOS sites).  Direction is expressed in tens of degrees from
+    true north.  Speed is expressed in miles per hour.  When two or
+    more equal speeds have occurred, the most recent speed and
+    direction are entered.
+ 
+    FMTM
+    Time of Fastest Mile or Fastest 1-minute Wind (begin 1984), or
+    Fastest 2-minute Wind (begin September 1992).  Units are
+    expressed in hours and minutes.
+ 
+    FRGB
+    Base of Frozen Ground Layer.  The depth below the surface of the
+    ground at which frozen ground is last struck.  Data available
+    through 1964 only for designated stations.  DATA-VALUE = b00000
+    to b00099 expressed in whole inches.
+     
+    FRGT
+    Top of frozen ground layer.  The depth below the surface of the
+    ground at which frozen ground is first struck.  Data available
+    through 1964 only for designated stations.  DATA-VALUE = b00000
+    to b00099 expressed in whole inches.
+ 
+    FRTH
+    Thickness of Frozen Ground Layer.  Base value minus top value.
+    Data available through 1964 only for designated stations.
+    DATA-VALUE = b00000 to b00099
+ 
+    FSIN
+    Highest Instantaneous Wind Direction and Speed.  This is the
+    highest gust or peak reached by the pen of the gust recorder
+    during the 24 hour period.  Direction is expressed in 16 Point
+    WBAN Code (Reference Table "F1"). Speed generally expressed in
+    miles per hour.  When two or more equal wind speeds occur the
+    most recent is archived.
+ 
+    FSMI
+    Fastest Mile Wind Direction and Speed.  Recorded by stations
+    having triple or multiple register type recording instruments.
+    The speed of a mile of wind occurring in the shortest time is
+    used.  This is determined by measuring the jogs on the chart made
+    by the one mile contacts of the anemometer.  Speed expressed in
+    miles per hour.  Example of value field XXYYY for wind direction
+    and speed: 18045; 18 = wind direction from 169 degrees to 191
+    degrees.  045 = wind speed 45 miles per hour. FSMI is not
+    digitized for Air Weather Service stations.  (Reference Table "F2")
+     
+    FSMN
+    Fastest Observed One-minute Wind Direction and Speed.  This is
+    used at stations not equipped with recording instruments.  It is
+    obtained by observation of an indicator for one minute and using
+    an average value.  Direction is expressed in Tens of Degrees
+    Code.  Speed expressed in miles per hour.  Example of value field
+    XXYYY for wind direction and speed:  18045; 18 = wind direction
+    from 169 degrees to 191 degrees.  045 = wind speed 45 miles per
+    hour.  FSMN is not digitized for Air Weather Service Stations.
+    (Reference table "F2")
+ 
+    GAHT
+    River Gauge Height - Below zero gauge readings.  DATA-VALUE =
+    negative values of b00000 to b00999, expressed to the nearest
+    tenth of a foot.
+ 
+    HTDG
+    Heating Degree Days (begin 1984; however, several stations
+    reported this element as early as 1961).  Base 65 whole degrees
+    Fahrenheit.
+ 
+    MNPN
+    Daily minimum temperature of water in an evaporation pan (effective
+    September 1963). Unit Measurement, Whole Degrees Fahrenheit.
+    (Reference Table "P").
+
+    MNRH
+    Minimum Relative Humidity (through 1955).  DATA-VALUE = b00000 to
+    b00100, expressed in whole percent.  (AWS stations through
+    January 1958, NWS, FAA, and Navy stations through December 1964.
+    Most stations restarted in 1984; some stations reported this
+    element as early as 1961).
+ 
+    MNTP
+    Average Temperature (begin 1984).  The value is the (Max Temp. +
+    Min Temp.)/2, expressed in whole degrees Fahrenheit. (Reference Table      
+    "P").
+     
+    MXPN
+    Daily maximum temperature of water in an evaporation pan (effective
+    September 1963). Unit Measurement, Whole Degrees Fahrenheit.
+    (Reference Table "P").
+
+    MXRH
+    Maximum Relative Humidity.  DATA-VALUE = b00000 to b00100,
+    expressed in whole percent.  (AWS stations through June 1958,
+    NWS, FAA, and Navy stations through December 1964. Most stations
+    restarted in 1986.)
+
+    PGTM
+    Peak Gust Time or Maximum 5-second Wind Speed Time.  Value =
+    b00000 to b02359, expressed in hours and minutes. Example: 2359 =
+    23 hours and 59 minutes.
+ 
+    PKGS
+    Peak Gust Direction and Speed.  If two or more equal peak gust
+    speeds occurred on the same day, the first was digitized for the
+    period July, 1968 through December 1972.  Beginning in January
+    1973, the last was digitized.  The direction is generally
+    expressed in 16 Point WBAN Code, with the following exceptions:
+ 
+    (1)  Air Force stations used 36 Point code from January, 1964
+    through February, 1967, 16 Point WBAN Code from March, 1967
+    through June, 1968, and 36 Point code again from July, 1968
+    through December, 1970.  Air Force data was generally
+    discontinued by December, 1970.
+     
+    (2)  Navy stations used 16 Point WBAN Code from the beginning of
+    record through January, 1971, and 36 Point Code from February,
+    1971 through the present.
+ 
+    Wind speeds are generally expressed in miles per hour through
+    December,  1954, and in knots from January, 1955 to the present.
+    A  consistent exception is Navy stations, which used knots for
+    the entire period of record.  Example of value field XXYYY after
+    1954 for wind direction and speed:  44032; 44 = Wind direction
+    from the SE.  032 = Wind speed 032 knots.
+ 
+    Beginning July 1996, wind direction is expressed in 36 Point
+    WBAN Code (Reference Table "F2").
+     
+    PRCP
+    Daily precipitation.  Precipitation reading for 24 hours ending at
+    time of observation.  Trace is less than 0.005 inch.  Unit
+    Measurement, Inches to Hundredths.
+ 
+    PRES
+    Average Daily Station Pressure (begin 1984).  Based on eight
+    3-hourly observations per day.  Units expressed in thousandths of
+    inches of Mercury.
+ 
+    PSUN
+    Daily Percent of Possible Sunshine (begin January 1965).  Data
+    Value = b00000 to b00100, expressed in percent.
+
+    PWND
+    Prevailing daily wind direction. Unit Measurement, Whole Degrees.
+     
+    RDIR
+    Resultant Wind Direction (begin 1984).  DATA-VALUE expressed to
+    the nearest whole degree code.  From January 1984 through late
+    1994 the Meteorological Element Measurement units code is
+    incorrectly recorded as DT (wind direction in tens of degrees).
+    It should be DW (wind direction in whole degrees).
+ 
+    RWND
+    Resultant Wind Speed (begin 1984).  DATA-VALUE is expressed in
+    miles per hour to tenths.  From January 1984 through June 1987,
+    the Meteorological Element Measurement Units Code is incorrectly
+    recorded as TK (tenths of knots) and incorrectly recored as MH
+    (miles per hour) from July 1987 through late 1994. It should be
+    TL tenths of miles per hour.
+     
+    SAMM
+    Average Cloudiness Midnight to Midnight - (begin September 1992
+    for ASOS sites).  This is the average of all available 30-second
+    ceilometer data for the 24-hour period expressed in oktas of
+    cloud cover at or below 12,000 feet.  The DATA-VALUES are defined
+    in Reference Table "C1".
+ 
+    SASS
+    Average Cloudiness Sunrise to Sunset (begin September 1992 for
+    ASOS sites). This is the average of all available 30-second
+    ceilometer data for the period from sunrise to sunset expressed
+    in oktas of cloud cover at or below  12,000 feet.  The DATA-VALUES
+    are defined in Reference Table "C1".
+     
+    SCMM
+    Average Sky Cover Midnight to Midnight (begin January 1965).
+    Element not recorded at stations where personnel were not on duty
+    24 hours a day.  See Elements ASMM and STMM for ASOS sites.
+    DATA-VALUES are expressed in tenths and are defined in Reference
+    Table "C".
+ 
+    SCSS
+    Average Sky Cover Sunrise to Sunset - (begin January 1965).
+    DATA-VALUES are expressed in tenths and are defined in Reference
+    Table "C". See Elements ASSS and STSS for ASOS sites.
+ 
+    SGMM
+    Average Cloudiness Midnight to Midnight (begin September 1992;
+    end June 1996; derived from GOES satellite data).  The areal
+    coverage is approximately 50km by 50km centered on the ASOS site.
+    DATA-VALUE is the average of all satellite scans of the site
+    during the 24-hour period, expressed in oktas of cloud cover
+    occurring above 12,000 feet.  The DATA-VALUES are defined in
+    Reference Table "C1".
+ 
+    SGSS
+    Average Cloudiness Sunrise to Sunset (begin September 1992; end
+    June 1996; derived from GOES satellite data).  The areal coverage
+    is approximately 50km by 50km centered on the ASOS site.  DATA-VALUE
+    is the average of all satellite scans of the site during
+    period from sunrise to sunset, expressed in oktas of cloud cover
+    occurring above 12,000 feet.  The DATA-VALUES are defined in
+    Reference Table "C1".
+
+    SKYC
+    Daily cloudiness (clear, partly cloudy or cloudy).  Clear is zero tenths 
+    coverage of the sky by clouds, partly cloudy is four tenths coverage, and 
+    cloudy is eight tenths coverage. Unit Measurement, Tenths of sky coverage.
+ 
+    SLVP
+    Average Daily Sea Level Pressure (begin 1984).  DATA-VALUE
+    expressed in tenths of millibars.
+     
+    SMMM
+    Average Sky Cover Midnight to Midnight (begin January 1965).
+    Element not recorded at stations where personnel were not on duty
+    24 hours a day.  See Elements SAMM and SGMM for ASOS sites.
+    DATA-VALUES are expressed in oktas and are defined in Reference
+    Table "C1".
+ 
+    SMSS
+    Average Sky Cover Sunrise to Sunset - (begin January 1965)
+    DATA-VALUES are expressed in oktas and are defined in Reference
+    Table "C1".  See Elements SASS and SGSS for ASOS sites.
+     
+    SNOW
+    Daily Snowfall (Snowfall includes sleet).  Amount is for 24-hour
+    period ending at observation time.  Hail was included with snowfall
+    from July 1948 through December 1955.  Hail occurring alone was not
+    included with either snowfall or snow depth before and after that
+    period.  Trace is less than 0.05 inch.  Unit Measurement, Inches to
+    Tenths.
+     
+    SNWD
+    Snow depth at observation time.  (Snow depth is depth of snow on
+    the ground at time of observation.  Trace is depth less than 0.5
+    inch.) Unit Measurement, Whole Inches.  See Table "H".
+     
+    SNyz
+    Daily minimum soil temperature (see note below).  Unit Measurement,
+    whole degrees Fahrenheit. (Reference Table "P").
+ 
+    SOyz
+    Soil temperature at observation time (see note below).  Unit
+    Measurement, whole degrees Fahrenheit. (Reference Table "P").
+ 
+    STMM
+    Average Cloudiness Midnight to Midnight (begin September 1992;
+    end June 1996; derived from GOES satellite data).  The areal
+    coverage is  approximately 50km by 50km centered on the ASOS
+    site.  DATA-VALUE is the average of all satellite scans of the
+    site during the 24-hour period, expressed in tenths of cloud
+    cover occurring above 12,000 feet.
+ 
+    STSS
+    Average Cloudiness Sunrise to Sunset (begin September 1992; end
+    June 1996; derived from GOES satellite data).  The areal coverage
+    is approximately 50km by 50km centered on the ASOS site.  DATA-VALUE
+    is the average of all satellite scans of the site during
+    period from sunrise to sunset, expressed in tenths of cloud cover
+    occurring above 12,000 feet.
+     
+    SXyz
+    Daily maximum soil temperature (see note below).  Unit Measurement,
+    whole degrees Fahrenheit.  (Reference Table "P").
+ 
+      Note:    Positions "y" and "z" of the soil temperatures are
+      encoded using reference Table "I", e.g., SN12 indicates that
+      the daily minimum soil temperatures that follow are measured
+      in an area covered with grass and at a depth of four inches
+      or 10 centimeters. 
+
+    TAVG
+    Daily mean temperature. Unit Measurement, Whole Degrees Fahrenheit.
+
+    THIC
+    Thickness of Ice on Water.  Measured each Monday at noon LST,
+    or more frequently if ice conditions are changing rapidly.  Data
+    available through December 1964 only for designated stations.
+    DATA-VALUE = b00000 to b00999, expressed in tenths of inches.
+     
+    TMAX
+    Daily maximum temperature.  (Maximum temperature reading for 24
+    hours ending at time of observation.) Unit Measurement, Whole
+    Degrees Fahrenheit.
+    Important Note:  For 1990 - 1994, this element is often shown as
+    missing if FIELD 1 = 3210 and the max temperature was reported as
+    -10 F or lower.  NCDC will attempt to correct this problem as soon
+    as resources allow.
+ 
+    TMIN
+    Daily minimum temperature.  (Minimum temperature reading for 24
+    hours ending at time of observation.) Unit Measurement, Whole
+    Degrees Fahrenheit.
+    Important Note:  For 1990 - 1994, this element is often shown as
+    missing if FIELD 1 = 3210 and the min temperature was reported as
+    -10 F or lower.  NCDC will attempt to correct this problem as soon
+    as resources allow.
+ 
+    TMPW
+    Average Daily Wet-Bulb Temperature (begin 1984).  DATA-VALUE =
+    -00199 to b00199, expressed in whole degrees Fahrenheit.
+    (Reference Table "P").
+
+    TOBS
+    Temperature at observation time. Unit Measurement, Whole Degrees
+    Fahrenheit.
+
+    TRNG
+    Daily temperature range.  (Maximum temperature minus minimum temperature.) 
+    Unit Measurement, Whole Degrees Fahrenheit.
+
+    TSUN
+    Daily Total Sunshine.  DATA-VALUE = b00000 to b01440, expressed
+    in minutes.  (Reference Table "J")
+
+    WDMV
+    24-hour wind movement.  Unit Measurement, Whole Miles.
+ 
+    WTEQ
+    Water equivalent of snow depth.  (For principal stations only.
+    Effective October 1963 for snow depth equal or greater than 2
+    inches). Unit Measurement, Inches to Tenths.
+ 
+ 
+
+FIELD 6 (27-28): METEOROLOGICAL ELEMENT MEASUREMENT UNITS CODE
+ 
+The units and decimal position (precision) of the data value for this record
+(reference Table "K"). See "Known Uncorrected Problems" for additional
+details.
+ 
+
+FIELD 7 (30-35): YEAR-MONTH
+ 
+This is the year and month of the data record.  Range of values is
+1850-current year and 01-12.  Example: 199512 = December 1995.
+
+
+FIELD 8 (37-40): DAY OF MONTH and HOUR OF OBSERVATION
+ 
+DAY: The day of the month on which the data element was observed.
+Range of values is 01-31 LST.  Will always begin with day 01 and end with day
+31.
+
+HOUR OF OBSERVATION: Contains the hour of the daily observation.  Hour of
+observation is reported using the 24-hour clock with values ranging from 00-23
+LST, except in the cases of soil temperatures element-type (where the hour
+is 99 to indicate missing) and "days with weather" (where the hour is
+24).  Through June 1967 observations were designated as "AM" or "PM";
+these values were set to 06 or 18 respectively during the conversion to
+TD-3200.  From July 1967 through 1981, all observations were set to
+hour 18 (because the majority are p.m. observations).  Beginning January
+1982, the actual hour of the observation is indicated. 
+
+
+FIELD 9 (42-47): SIGN AND VALUE OF METEOROLOGICAL ELEMENT
+ 
+SIGN: The algebraic sign of the meteorological data value is given as either
+a blank or a minus sign (-).  Blank indicates a positive value and a
+minus sign represents a negative value.
+ 
+VALUE OF METEOROLOGICAL ELEMENT
+ 
+The actual data value is given as a five-digit integer.  One major
+exception does exist however, for the DYSW (days with weather code)
+element-type values as explained in Table "D".  A very small number
+of data values are known to have non-numeric entries.
+ 
+When a data value is missing, the sign of the data value is set to "-", the
+data value is set to "99999", flag position 1 is set to "M" and flag position
+2 is blank.
+ 
+Prior to September 1991, when no daily precipitation reading was taken
+but the amount from that day (if any) is included in a subsequent value,
+the data value of precipitation is set equal to "00000" and flagged with
+an "S" in flag position 1.  In turn, the successive accumulated amount
+will be flagged with an "A" in flag position 1.  Since September 1991,
+it has been a practice at NCDC to set the precipitation value to
+"99999" in this situation; the flagging procedure has not changed.
+
+ 
+FIELD 10 (49-49): FLAG1
+ 
+The Data Measurement FLAG (reference Table "N").  This field will not be 
+present if the user chooses a delimited format without data flags.
+
+ 
+FIELD 11 (51-51): FLAG2
+
+The Data Quality FLAG (reference Table "O").  This field will not be 
+present if the user chooses a delimited format without data flags.
+
+
+FIELDS 8-11 are then repeated for each day of the month, beginning with 01 in
+the DAY field, and ending with 31 in the DAY field.  So, the data for DAY 02
+will occupy columns 53-67, DAY 03 = 69-83, etc.
+
+
+
+                                TABLES
+ 
+                        *******TABLE "A"*******
+ 
+       State-Code Table
+ 
+01 Alabama                  28 New Jersey
+02 Arizona                  29 New Mexico
+03 Arkansas                 30 New York
+04 California               31 North Carolina
+05 Colorado                 32 North Dakota
+06 Connecticut              33 Ohio
+07 Delaware                 34 Oklahoma
+08 Florida                  35 Oregon
+09 Georgia                  36 Pennsylvania
+10 Idaho                    37 Rhode Island
+11 Illinois                 38 South Carolina
+12 Indiana                  39 South Dakota
+13 Iowa                     40 Tennessee
+14 Kansas                   41 Texas
+15 Kentucky                 42 Utah
+16 Louisiana                43 Vermont
+17 Maine                    44 Virginia
+18 Maryland                 45 Washington
+19 Massachusetts            46 West Virginia
+20 Michigan                 47 Wisconsin
+21 Minnesota                48 Wyoming
+22 Mississippi              49 Not Used
+23 Missouri                 50 Alaska
+24 Montana                  51 Hawaii
+25 Nebraska                 66 Puerto Rico
+26 Nevada                   67 Virgin Islands
+27 New Hampshire            91 Pacific Islands
+
+
+                          *******TABLE "B"*******
+ 
+                   Cooperative Network Division Table
+ 
+NOTE:  The division number for a station
+may change over time.
+ 
+           HAWAII (STATE 51)*
+ 
+ISLAND NAME                   DIVISION
+ 
+   Kauai                           01
+   Oahu                            02
+   Molokai                         03
+   Lanai                           04
+   Maui                            05
+   Hawaii                          06
+ 
+*NOTE:  Hawaii (State 51) division numbers
+were changed during the initial conversion
+of this file.  Divisions within islands no
+longer exist.  Division numbers now
+represent each island.
+ 
+          PACIFIC ISLANDS (STATE 91)
+ 
+Division
+ 
+02 - East of 180th Meridian - Phoenix
+     Islands, Line Islands, and American
+     Samoa
+ 
+03 - Western Pacific Islands, North of
+     12N
+ 
+04 - Caroline and Marshall Islands
+
+ 
+                   ******** TABLE "C" ********
+ 
+                SKY COVER in TENTHS for ELEMENTS:
+                  ASMM/ASSS/SCMM/SCSS/STMM/STSS
+ 
+      DATA-VALUE
+      CODE           SKY COVER
+      00000     =  Clear or less than .1 coverage
+      00001     =  .1 Coverage
+      00002     =  .2 Coverage
+      00003     =  .3 Coverage
+      00004     =  .4 Coverage
+      00005     =  .5 Coverage
+      00006     =  .6 Coverage
+      00007     =  .7 Coverage
+      00008     =  .8 Coverage
+      00009     =  .9 Coverage
+      00010     = 1.0 Coverage - Overcast
+ 
+ 
+                   ******** TABLE "C1" ********
+ 
+                 SKY COVER in OKTAS for ELEMENTS:
+                  SAMM/SASS/SGMM/SGSS/SMMM/SMSS
+ 
+      DATA-VALUE
+      CODE           SKY COVER
+      00000     =  Clear or less than .1 coverage
+      00001     =  .1 Coverage
+      00002     =  .3 Coverage
+      00003     =  .4 Coverage
+      00004     =  .5 Coverage
+      00005     =  .6 Coverage
+      00006     =  .8 Coverage
+      00007     =  .9 Coverage
+      00008     = 1.0 Coverage - Overcast
+
+
+                          *******TABLE "D"*******
+
+                 DYSW - Daily Occurrence of Weather Table
+
+00 - Day of no occurrence
+01 - Day with smoke or haze (POR through
+     1963 and 1982 to Present)
+02 - Day with fog (POR through 1963 and
+     1982 to Present)
+04 - Day with drizzle (POR through 1963
+     and 1982 to Present)
+05 - Day with ice pellets (sleet)
+06 - Day with glaze
+07 - Day with thunder
+08 - Day with hail
+09 - Day with dust or sand storm (POR
+     through 1963 and 1982 to Present)
+10 - Day with blowing snow
+11 - Day with high wind (POR through 1963
+     and 1982 to Present)
+12 - Day with tornado (POR through 1963
+     and 1982 to Present)
+13 - Day with rain (1982 to Present)
+14 - Day with snow (1982 to Present)
+ 
+ 
+From 1980 forward, these two-character DYSW
+element-type codes are stored into the
+rightmost four characters of the data value
+portion of the meteorological element.
+Within the four characters used, the
+weather codes are entered left justified.
+Thus, if one type of weather occurs during
+a day, the data values would appear as
+OXXOO, where XX is the appropriate weather
+code.  If two types of weather occur, the
+data value will contain OXXYY, where XX is
+value 1 and YY is value 2.  If more than
+two types of weather occur on the same day,
+they will be stored into additional "DLY"
+records of the element-type code "DYSW" as
+needed.
+ 
+NOTE:  Prior to 1980, each weather code for
+DYSW is written as a unique DATA PORTION.
+Only the left position (XX) of the DYSW
+code is used (e.g., appears as OXXOO).
+
+
+                   ******** TABLE "E" ********
+ 
+                            DYSW/DYVC
+
+00  No occurrence
+01  Day with haze (smoke also included through August 1992; see
+    code 30 in this table)
+02  Day with fog (ice fog included through 1983; see code 17 in
+    this table)
+03  Day with heavy fog (heavy ice fog included through 1964)
+04  Day with drizzle (begin 1984)
+05  Day with ice pellets (sleet and small hail; small hail
+    included through June 1996; see code 31 in this table)
+06  Day with glaze
+07  Day with thunder
+08  Day with hail (1/4 inch or larger in diameter beginning July
+    1996)
+09  Day with volcanic ash (begin September 1992; dust or
+    sandstorm with visibility < 5/8 mile was reported as code 09
+    through August 1992; see codes 27 and 29 in this table)
+10  Day with blowing snow (includes drifting snow beginning July
+    1996)
+11  Day with high wind (squall; speeds increasing to at least
+    16kts/18mph and sustained at 22kts/25mph or more for at least
+    one minute; begin July 1996)
+12  Day with tornado (funnel cloud, waterspout included through
+    Aug 1992; see codes 20 and 21 in this table)
+13  Day with snow (snow pellets, snow grains, and ice crystals
+    included through Aug 1992; see codes 22, 23, 24 in this
+    table)
+14  Day with rain (drizzle, freezing drizzle, and freezing rain
+    included through 1983)
+15  Day with freezing rain (begin 1984)
+16  Day with freezing drizzle (begin 1984)
+17  Day with ice fog (begin 1984; includes freezing fog beginning
+    July 1996)
+18  Day with blowing spray (begin 1984; includes spray beginning
+    July 1996))
+19  Day with unknown source of precipitation (begin 1991 with
+    automated stations)
+20  Day with funnel cloud (begin September 1992)
+21  Day with waterspout (begin September 1992; includes tornado
+    beginning July 1996)
+22  Day with snow pellets (begin September 1992 through June
+    1996; see code 31 in this table)
+23  Day with snow grains (begin September 1992)
+24  Day with ice crystals (begin September 1992)
+25  Day with ground fog (begin September 1992)
+26  Day with dust (begin September 1992)
+27  Day with blowing dust (begin September 1992; includes
+    duststorm when visibility is reduced to less than 5/8 miles
+    beginning July 1996)
+28  Day with blowing obstruction (begin September 1992 through
+    June 1996)
+29  Day with blowing sand (begin September 1992); also includes
+    sand as well as sandstorm when visibility is reduced to less
+    than 5/8 mile (begin July 1996)
+30  Day with smoke (begin September 1992)
+31  Day with small hail and/or snow pellets (begin July 1996;
+    diameter less than 1/4 inch)
+32  Day with well developed dust/sand whirls (begin July 1996)
+33  Day with mist (begin July 1996)
+34  Day with rain or snow shower; used in reference to weather in
+    the vicinity only (begin July 1996)
+ 
+
+                   ******** TABLE "F1" ********
+ 
+                               FSIN
+ 
+ WIND DIRECTION CODE
+ (16 Point WBAN Code)
+ 
+ 12 = NNE   66 = SW
+ 22 = NE    76 = WSW
+ 32 = ENE   77 = W
+ 33 = E     78 = WNW
+ 34 = ESE   88 = NW
+ 44 = SE    18 = NNW
+ 54 = SSE   11 = N
+ 55 = S     00 = Calm
+ 56 = SSW      = Unknown
+ 
+Example of DATA-VALUE field XXYYY for wind direction and speeds:
+12037 Wind is from the NNE at 37 miles per hour.
+ 
+
+                   ******** TABLE "F2"********
+ 
+       FSMI & FSMN
+ 
+ WIND DIRECTION CODES
+ 
+ 00 =  Calm
+ 01 =  010
+ 02 =  020
+ "      "
+ "    through     "
+ 36 =  360
+ 99 =  Unknown
+ 
+
+                   ******** TABLE "G" ********
+                               PKGS
+ 
+ WIND DIRECTION CODE
+ (36 Point WBAN Code)
+ 
+ 03 = NNE      21 = SSW
+ 05 = NE       24 = SW
+ 07 = ENE      25 = WSW
+ 09 = E        27 = W
+ 12 = ESE      30 = WNW
+ 14 = SE       32 = NW
+ 16 = SSE      34 = NNW
+ 18 = S        36 = N
+
+ 
+                  ******** TABLE "H" ********
+
+                               SNWD
+ 
+ DEPTH of SNOW OBSERVED AT:
+     00:30  GMT prior to July 1952
+     12:30  GMT 1 July 1952 to 30 May 1957
+     12:00  GMT 1 June 1957 to present
+ 
+DATA-VALUE = b00000 to b09999 in whole inches.  Trace of snow depth
+is less than 0.5 inches.  Some Alaska and part-time stations take
+snow depth measurements at different hours.
+
+
+                         *******TABLE "I"*******
+ 
+                         Soil Temperature Table
+ 
+          (y = Code for soil cover)
+          (z = Code for soil depth)
+ 
+*******************************************
+|Code| Cover | |Code   |  Depth   | Depth |
+|    |       | |       | (inches) |  (cm) |
+ 
+|************| |*******|**********|*******|
+|y=1 | Grass | |       |          |       |
+|  2 | Fallow| |z = 1  |     2    |    5  |
+|  3 | Bare  | |       |          |       |
+|    | ground| |    2  |     4    |   10  |
+|  4 | Brome | |       |          |       |
+|    | grass | |    3  |     8    |   20  |
+|  5 | Sod   | |       |          |       |
+|  6 | Straw | |       |          |       |
+|    | mulc  | |    4  |    20    |   50  |
+|  7 | Grass | |       |          |       |
+|    | muck  | |    5  |    40    |  100  |
+|  8 | Bare  | |       |          |       |
+|    | muck  | |    0  | Unknown  |Unknown|
+|  0 |Unknown| |       |          |       |
+*******************************************
+ 
+NOTE:  Soil records are kept since 1982.
+Some stations may report soil temperatures
+at observation time twice a day.  Separate
+records will occur for both observation
+times.
+ 
+
+                  ********  TABLE "J" ********
+ 
+                               TSUN
+ 
+ Conversion of minutes to tenths of hours is:
+    MIN TENTHS
+    1-2   0.0   33-38  0.6
+    3-8   0.1   39-44  0.7
+    9-14  0.2   45-50  0.8
+   15-20  0.3   51-56  0.9
+   21-26  0.4   57-60  1.0
+   27-32  0.5    A     ASOS
+ 
+
+                   ******** TABLE "K" ********
+ 
+          METEOROLOGICAL ELEMENT MEASUREMENT UNITS CODE
+ 
+The units and decimal position of the data value for this record.
+Range of values is listed below.
+ 
+ C    Whole degrees Celsius
+ CM   Centimeters
+ D    Whole Fahrenheit degree days
+ DT   Wind direction in tens of degrees
+ DW   Wind direction in whole degrees
+ F    Whole degrees Fahrenheit
+ FN   Feet and tenths
+ FT   Whole feet
+ HF   Hundreds of feet
+ HI   Hundredths of inches
+ HM   Hundredths of miles
+ HR   Time in hours and minutes
+ HT   Hundredths of inches but observation was only made to
+      tenths
+ I    Whole inches
+ IH   Hundredths of inches of mercury
+ IT   Thousandths of inches of mercury
+ KD   Knots and direction in tens of degrees
+ KS   Knots and direction in 16 pt. code
+ M    Whole miles
+ MD   MPH and direction in tens of degrees
+ ME   Whole meters
+ MH   Miles per hour
+ MM   Millimeters
+ MN   Minutes
+ MS   MPH and direction in 16 pt. code
+ MT   Tenths of millibars
+ NA   No units applicable (none-dimensional)
+ N1   No units applicable - element to tenths
+ N2   No units applicable - element to hundredths
+ OS   Oktas of sky cover
+ P    Whole percent
+ TC   Tenths of degree Celsius
+ TD   Tenths of Fahrenheit degree days
+ TF   Tenths of degrees Fahrenheit
+ TH   Tenths of hours
+ TI   Tenths of inches
+ TK   Tenths of knots
+ TL   Tenths of miles per hour
+ TM   Tenths of millimeters
+ TP   Tenths of percent
+ TS   Tenths of sky cover
+ 
+Note:  All single digit Element-Units are left justified and
+blank filled.
+ 
+
+                   ******** TABLE "N" ********
+
+                     Data Measurement Flag 1
+ 
+A -   Accumulated amount since last
+      measurement.
+B -   Accumulated amount includes
+      estimated values (since
+      last measurement).
+E -   Estimated (see Table "O" for
+      estimating method).
+J -   Value has been manually
+      validated.
+M -   Flag1 is "M" if the data value
+      is missing. In this case, the
+      sign of the meteorological value
+      is assigned "-" and the value of
+      the meteorological element is
+      assigned "99999".
+S -   Included in a subsequent value.
+      (data value = "00000" OR
+      "99999").
+T -   Trace (data value = 00000 for a
+      trace).
+( -   Expert system edited value,
+      not validated.
+) -   Expert system approved
+      edited value.
+Blank - Flag not needed.
+ 
+Flag 1 values of "S" and "A" usually occur
+in pairs (ie. a daily value will have Flag
+1 assigned as "S" and the next daily value
+will have Flag 1 assigned as "A").  For
+some daily values these flags do not occur
+in pairs.
+ 
+Other values occasionally appear in Data
+Measurement Flag 1 for which documentation
+is not currently available, e.g., "C" and
+"s".
+
+
+                   ******** TABLE "O" ********
+
+                       Data Quality Flag 2
+ 
+0  - Valid data element.
+1  - Valid data element (from "unknown"
+     source, pre-1982).
+2  - Invalid data element (subsequent value
+     replaces original value).
+3  - Invalid data element (no replacement
+     value follows).
+4  - Validity unknown (not checked).
+5  - Original non-numeric data value has
+     been replaced by its deciphered
+     numeric value.
+A  - Substituted TOBS for TMAX or TMIN
+B  - Time shifted value
+C  - Precipitation estimated from snowfall
+D  - Transposed digits
+E  - Changed units
+F  - Adjusted TMAX or TMIN by a multiple of
+     + or -10 degrees
+G  - Changed algebraic sign
+H  - Moved decimal point
+I  - Rescaling other than F, G, or H
+J  - Subjectively derived value
+K  - Extracted from an accumulated value
+L  - Switched TMAX and/or TMIN
+M  - Switched TOBS with TMAX or TMIN
+N  - Substitution of "3 nearest station
+     mean"
+O  - Switched snow and precipitation data
+     value
+P  - Added snowfall to snow depth
+Q  - Switched snowfall and snow depth
+R  - Precipitation not reported; estimated
+     as "O"
+S**- Manually edited value
+T  - Failed internal consistency check
+U  - Failed areal consistency check
+     (beginning Oct. 1992)
+V  - Replacement value based on Temp Val QC process (beginning Feb. 2006)
+** - Manually edited value could be derived
+     by any of the procedures noted by
+     Flags A-R.
+ 
+ 
+                          ******TABLE "P"******
+ 
+                       Units of Measurement Table
+ 
+Range of values where b = Blank:
+ 
+bF   Whole degrees Fahrenheit (right
+     justified
+HI   Hundredths of inches
+bI   Whole inches (right justified)
+bM   Whole miles (right justified)
+NA   No units applicable (nondimensional)
+TI   Tenths of inches
+
+
+
+KNOWN UNCORRECTED PROBLEMS AND DATA CAVEATS:
+
+For maximum and minimum temperature, from 1990 - 1994, the value
+is often shown as missing if FIELD 1 = 3210 and the temperature was
+reported as -10 F or lower.  NCDC will attempt to correct this problem
+as soon as resources allow.
+
+For snowfall and snow depth data:  For July 1996 to present, this element
+is not valid and should not be used if FIELD 1 = 3210.  NCDC will
+attempt to correct this problem as soon as resources allow.
+
+For October 1990, there are numerous duplicate data records in
+the daily data.  In using the data, choose the data record with
+the most daily values for the month.
+
+During the period 1984-86 there are numerous entries for element
+PRCP of "NA" for the Meteorological Element Units Code.  These
+should be coded as "HI".
+ 
+In 1988 for states 31-91 (North Carolina to Pacific Islands), the
+algebraic sign of positive meteorological data values may be coded
+as "+" symbols instead of as blanks.
+ 
+The historical data were converted from existing digital files and
+placed in the element structure format in 1983.  At that time these
+data were only processed through a gross value check.  In January
+1984, NCDC instituted greatly enhanced computer algorithms for
+automated validation of digital archives.  The revised edit system
+performs internal consistency checks, climatological limits checks
+and serial checks.  It is the goal of the NCDC that, as resources
+permit, these historical files will be brought up to the same level
+of quality as those from 1984 onward.
+ 
+Quality control "flags" are appended to each element to show how
+they fared during the edit procedures and to indicate what, if any,
+action was taken. 
+ 
+The typical progression of temperature instruments was from
+liquid-in-glass thermometers, to (1960 series) Hygrothermometers,
+to (1980 series) Hygrothermometers.  Scientists are currently
+investigating the effect these instrument changes (especially
+the 1980 series) may have on long term temperature records.
+
+Users should also be aware of a potential for a "lag" in the change of
+observation times used in the logical record and what is actually in practice
+at the site (that is, several months may be archived digitally under an "old"
+observation time before NCDC received notification).
+ 
+Prior to the 1970's, accumulated amounts of precipitation were not always
+flagged with the "A".  Instead the convention was to treat the value following
+a series of data values flagged with "S" as an accumulated value.
+ 
+A very small number of data values are known to have non-numeric entries.
+ 
+Maximum and Minimum Temperature--
+ 
+National Weather Service, and Federal Aviation Stations:  These
+values are determined from stations equipped with maximum and
+minimum thermometers or recording instruments.  For some sites,
+when instruments were inoperative, values were selected from
+hourly observations.
+
+Maximum and Minimum Relative Humidity--
+
+For the period July 1996 through December 1998, the twenty four (24) hour
+maximum and minimum relative humilities reported as 00000 and 00100
+respectively, are incorrect.  These values were incorrectly generated for
+stations that did not report relative humidity.
+ 
+U.S. Air Force Stations:  From May 15, 1955, for stations taking 24
+record observations per day, the maximum and minimun temperatures
+are determined from hourly observations.  The observations at the
+beginning and ending of day are considered.  The values are
+reported as missing when more than 3 of the hourly observations
+pertinent to the determination of maximum and minimum temperatures
+for each 24-hour period are missing or erroneous.
+ 
+U.S. Navy Stations:  When maximum and minimum thermometer readings
+are not available, the data at most stations are reported as
+missing.  Some Navy stations determine the maximum and minimum
+temperatures from hourly observations when readings from maximum
+and minimum thermometers are not available.
+ 
+Hail and Snowfall Amounts--
+ 
+Although the inclusion of hail amounts with snowfall amounts was
+discontinued after December 31, 1955, some stations may have hail
+amounts included with snowfall after this date, as late as 1963 at
+a few stations.  This occurred because on the original manuscript
+form the same column was used for the entry of snow, sleet and hail,
+and the entry was not indicated as hail.  For NWS sites, hail was
+again included in snowfall amounts beginning in 1989.
+
+Confidence Factors--
+ 
+Days with Weather Code:  The "days with weather" element-type (DYSW) cannot be
+used with any measure of confidence when FIELD 1 = 3200.  Principal
+climatological stations operating 24 hours a day are expected to be the most
+reliable source of "days with weather".  Reporting of this element by
+cooperative observers is not a requirement and criteria for reporting is not
+definitive.  Most cooperative stations do not record this information.

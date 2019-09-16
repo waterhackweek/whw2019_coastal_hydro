@@ -1,0 +1,14 @@
+;; Object ede-proj-project
+;; EDE project file.
+(ede-proj-project "ede-proj-project"
+  :name "vicmet"
+  :file "Project.ede"
+  :targets (list 
+   (ede-proj-target-makefile-program "exe"
+    :name "exe"
+    :path ""
+    :source '("main.cpp" "pixel.cpp" "basin.cpp" "station.cpp" "funcs.cpp")
+    :auxsource '("vicmet.hpp" "pixel.hpp" "basin.hpp" "station.hpp")
+    )
+   )
+  )
